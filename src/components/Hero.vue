@@ -74,6 +74,7 @@ import { profile } from '../data.js';
   font-size: clamp(19px, 2vw, 21.5px);
   line-height: 1.6;
   color: var(--ink-soft);
+  white-space: pre-line;
 }
 
 .hero-stats {

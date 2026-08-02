@@ -17,7 +17,9 @@ import { timeline, stack } from '../data.js';
               <div class="timeline-period mono">{{ t.period }}</div>
               <div class="timeline-org">{{ t.org }}</div>
               <div v-if="t.position" class="timeline-position mono">{{ t.position }}</div>
-              <p class="timeline-detail">{{ t.detail }}</p>
+              <ul class="timeline-detail">
+                <li v-for="d in t.detail" :key="d">{{ d }}</li>
+              </ul>
               <p v-if="t.note" class="timeline-note">{{ t.note }}</p>
             </div>
           </li>
@@ -110,10 +112,32 @@ import { timeline, stack } from '../data.js';
 }
 
 .timeline-detail {
-  margin-top: 6px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
   color: var(--ink-soft);
   font-size: 16px;
   line-height: 1.55;
+}
+
+.timeline-detail li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.timeline-detail li + li {
+  margin-top: 2px;
+}
+
+.timeline-detail li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink-faint);
 }
 
 .timeline-note {
