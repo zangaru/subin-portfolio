@@ -1,0 +1,151 @@
+:root {
+  /* Color tokens */
+  --paper: #F7F8FA;
+  --paper-raised: #FFFFFF;
+  --ink: #000000;
+  --ink-soft: #000000;
+  --ink-faint: #7B8494;
+  --hairline: #E1E5EB;
+  --hairline-strong: #C8CEDA;
+
+  --teal: #0F6E62;
+  --teal-soft: #E4F1EE;
+  --amber: #B5622E;
+  --amber-soft: #FBEEE6;
+  --before: #B5533C;
+  --before-soft: #F7E9E5;
+  --after: #3E8E5B;
+  --after-soft: #E9F3EC;
+
+  /* Type tokens */
+  --font-display: 'IBM Plex Sans KR', -apple-system, sans-serif;
+  --font-body: 'IBM Plex Sans KR', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* Layout */
+  --content-width: 880px;
+  --gutter: clamp(20px, 5vw, 64px);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--ink);
+}
+
+p { margin: 0; }
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+code, .mono {
+  font-family: var(--font-mono);
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--teal-soft);
+  color: var(--teal);
+}
+
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.section {
+  padding: clamp(56px, 9vw, 96px) 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--hairline);
+}
+
+#intro,
+#career,
+#projects,
+#side-project {
+  scroll-margin-top: 56px;
+}
+
+#projects,
+#side-project {
+  border-top: 1px solid var(--hairline);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 500;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--hairline-strong);
+  color: var(--ink-soft);
+  background: var(--paper-raised);
+  white-space: nowrap;
+}
+
+.placeholder-box {
+  border: 1.5px dashed var(--hairline-strong);
+  border-radius: 10px;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(0,0,0,0.015),
+    rgba(0,0,0,0.015) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  color: var(--ink-faint);
+  font-size: 15px;
+  font-family: var(--font-mono);
+  padding: 28px 20px;
+  text-align: center;
+  line-height: 1.6;
+}
