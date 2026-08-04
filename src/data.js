@@ -25,10 +25,10 @@ export const timeline = [
     org: '코아아이티',
     position: 'CT사업본부 · 사원(선임)',
     detail: [
-      '호텔업 등급평가 운영 및 리뉴얼 (레거시 재구축 포함)',
+      '호텔업등급결정사업 운영 및 리뉴얼 (레거시 재구축 포함)',
       '관광기금융자 운영 및 리뉴얼',
-      '코이카 월드프렌즈코리아 QA',
-      '코이카 글로벌인재 홈페이지 구축(모집선발 메뉴 사용자 화면 담당) 진행 중',
+      'KOICA 월드프렌즈코리아 QA',
+      'KOICA 글로벌인재 홈페이지 구축(모집선발 메뉴 사용자 화면 담당) 진행 중',
     ],
     note: '글로벌인재 홈페이지는 JSP · eGov Framework · MyBatis 기반으로 다른 프로젝트와 스택이 다름, 프로젝트 착수 시점부터 참여',
     inProgress: true,
@@ -39,7 +39,7 @@ export const timeline = [
     position: 'SI 사업본부 · 사원',
     detail: [
       '관광공제회 유지보수',
-      '호텔업 등급평가 운영 및 리뉴얼',
+      '호텔업등급결정사업 운영 및 리뉴얼',
       '관광기금융자 운영 및 리뉴얼',
     ],
     note: '회사 재정난으로 진행 중이던 프로젝트와 함께 현재 회사로 이관',
@@ -49,8 +49,8 @@ export const timeline = [
 export const projects = [
   {
     id: 'PROJECT 01',
-    name: '호텔업 등급평가 시스템',
-    domain: '공공기관 · 호텔업 등급평가',
+    name: '호텔업등급결정사업',
+    domain: '공공기관 · 호텔업등급결정사업',
     period: '2024.04 – 현재',
     role: '풀스택 개발',
     stack: ['Vue.js', 'Spring Boot', 'JPA'],
