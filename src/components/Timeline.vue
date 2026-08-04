@@ -1,11 +1,12 @@
 <script setup>
-import { timeline, stack } from '../data.js';
+import { timeline, stack, profile } from '../data.js';
 </script>
 
 <template>
   <section class="section">
     <div class="container timeline-grid">
       <div class="timeline-col">
+        <p v-if="profile.intro" class="career-intro">{{ profile.intro }}</p>
         <p class="eyebrow">CAREER LOG</p>
         <ol class="timeline-list">
           <li v-for="(t, i) in timeline" :key="i" class="timeline-item" :class="{ inprogress: t.inProgress }">
@@ -50,6 +51,14 @@ import { timeline, stack } from '../data.js';
   .timeline-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.career-intro {
+  margin-bottom: 24px;
+  max-width: 58ch;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-soft);
 }
 
 .timeline-list {
