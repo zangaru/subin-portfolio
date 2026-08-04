@@ -1,8 +1,8 @@
 <script setup>
-import { ref } from 'vue';
 import { sideProjects } from '../data.js';
 
-const expandedStates = ref(sideProjects.map(() => false));
+const props = defineProps({ expandedStates: Array });
+const emit = defineEmits(['toggle']);
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const expandedStates = ref(sideProjects.map(() => false));
           class="project-head"
           :aria-expanded="expandedStates[i]"
           :aria-controls="`side-body-${i}`"
-          @click="expandedStates[i] = !expandedStates[i]"
+          @click="emit('toggle', i)"
         >
           <span class="chip id-chip mono">SIDE</span>
           <div class="project-head-text">

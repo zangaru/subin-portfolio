@@ -7,14 +7,18 @@ import ProjectSection from './components/ProjectSection.vue';
 import SiteNote from './components/SiteNote.vue';
 import SideProjects from './components/SideProjects.vue';
 import Footer from './components/Footer.vue';
-import { projects } from './data.js';
+import { projects, sideProjects } from './data.js';
 
 const expandedStates = ref(projects.map(() => false));
-const allExpanded = computed(() => expandedStates.value.every(Boolean));
+const sideExpandedStates = ref(sideProjects.map(() => false));
+const allExpanded = computed(
+  () => expandedStates.value.every(Boolean) && sideExpandedStates.value.every(Boolean)
+);
 
 function toggleAll() {
   const next = !allExpanded.value;
   expandedStates.value = expandedStates.value.map(() => next);
+  sideExpandedStates.value = sideExpandedStates.value.map(() => next);
 }
 </script>
 
@@ -44,7 +48,10 @@ function toggleAll() {
     </div>
     <div id="side-project">
       <SiteNote />
-      <SideProjects />
+      <SideProjects
+        :expanded-states="sideExpandedStates"
+        @toggle="(i) => (sideExpandedStates[i] = !sideExpandedStates[i])"
+      />
     </div>
     <Footer />
   </div>
