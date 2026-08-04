@@ -149,3 +149,52 @@ button {
   text-align: center;
   line-height: 1.6;
 }
+
+/* ---- Print / PDF export ----
+   목적: 브라우저 "인쇄 → PDF로 저장"으로 경력기술서용 PDF를 뽑을 때,
+   내비게이션·토글 버튼 등 인터랙션 UI는 숨기고 접힌 프로젝트는 전부
+   펼쳐서 출력한다. data.js 콘텐츠 자체는 그대로 재사용. */
+@media print {
+  .site-nav,
+  .projects-toolbar,
+  .toggle-arrow {
+    display: none !important;
+  }
+
+  /* v-show로 숨겨진 접힌 프로젝트를 인쇄 시 강제로 펼침 */
+  .project-body {
+    display: block !important;
+  }
+
+  .project-head {
+    cursor: default;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .hero {
+    background: #fff !important;
+  }
+
+  .hero::before {
+    display: none !important;
+  }
+
+  .section {
+    padding: 20px 0 !important;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .story,
+  .project-meta,
+  .arch {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

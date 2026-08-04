@@ -266,4 +266,102 @@ defineProps({ architecture: Object });
     grid-template-columns: 1fr;
   }
 }
+
+/* 인쇄 시 다이어그램이 한 페이지 안에 다 들어오도록 내부 여백/폰트를 압축 */
+@media print {
+  .arch {
+    padding: 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .arch-meta {
+    gap: 4px 14px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+  }
+
+  .meta-pill {
+    font-size: 11px;
+  }
+
+  .meta-label {
+    font-size: 10px;
+  }
+
+  .tier-label {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .client-row {
+    gap: 8px;
+  }
+
+  .client-box {
+    padding: 8px 10px;
+  }
+
+  .role-badge {
+    font-size: 9.5px;
+    padding: 1px 7px;
+    margin-bottom: 4px;
+  }
+
+  .app-name {
+    font-size: 12.5px;
+    margin: 0 0 3px;
+  }
+
+  .app-desc {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .connector {
+    height: 16px;
+    margin: 2px auto;
+  }
+
+  .connector-tag {
+    font-size: 9.5px;
+    padding: 1px 6px;
+  }
+
+  .app-tier-box {
+    padding: 10px;
+  }
+
+  .app-tier-head {
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+  }
+
+  .stack-line {
+    font-size: 10.5px;
+  }
+
+  .layer-label {
+    font-size: 9.5px;
+    margin: 0 0 5px;
+  }
+
+  .layer-label:not(:first-of-type) {
+    margin-top: 8px;
+  }
+
+  .module-chips {
+    gap: 4px;
+  }
+
+  .module-chip,
+  .infra-chip {
+    font-size: 10.5px;
+    padding: 1px 6px;
+  }
+
+  .data-box {
+    padding: 8px 12px;
+  }
+}
 </style>

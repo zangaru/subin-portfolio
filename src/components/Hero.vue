@@ -1,5 +1,9 @@
 <script setup>
 import { profile } from '../data.js';
+
+function downloadPdf() {
+  window.print();
+}
 </script>
 
 <template>
@@ -30,6 +34,7 @@ import { profile } from '../data.js';
           >{{ c.value }}</a>
           <span v-else class="contact-value">{{ c.value }}</span>
         </span>
+        <button type="button" class="pdf-btn mono" @click="downloadPdf">PDF 다운로드 ↓</button>
       </div>
     </div>
   </header>
@@ -132,5 +137,27 @@ import { profile } from '../data.js';
 
 .contact-link:hover {
   color: var(--teal);
+}
+
+.pdf-btn {
+  margin-left: auto;
+  font-size: 13.5px;
+  padding: 6px 14px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 6px;
+  background: var(--paper-raised);
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.pdf-btn:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+@media print {
+  .pdf-btn {
+    display: none !important;
+  }
 }
 </style>
