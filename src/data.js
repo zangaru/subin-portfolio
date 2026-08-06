@@ -33,7 +33,7 @@ export const timeline = [
       'KOICA 월드프렌즈코리아 QA',
       'KOICA 글로벌인재 홈페이지 구축(모집선발 메뉴 사용자 화면 담당) 진행 중',
     ],
-    note: '글로벌인재 홈페이지는 JSP · eGov Framework · MyBatis 기반으로 다른 프로젝트와 스택이 다름, 프로젝트 착수 시점부터 참여',
+    note: null,
     inProgress: true,
   },
   {
